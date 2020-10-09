@@ -18,5 +18,22 @@ public class TestingStack {
 		MyNode<Integer> topElement = stack.peak();
 		Assert.assertEquals(thirdNode, topElement);
 	}
+
+	@Test
+	public void ApplyingPeakNpopMethod_UntilStackIsEmpty() {
+		MyNode<Integer> firstNode = new MyNode<Integer>(70);
+		MyNode<Integer> secondNode = new MyNode<Integer>(30);
+		MyNode<Integer> thirdNode = new MyNode<Integer>(56);
+		stack.push(firstNode);
+		stack.push(secondNode);
+		stack.push(thirdNode);
+		MyNode<Integer> firstpop = stack.pop();
+		Assert.assertEquals(thirdNode, firstpop);
+		MyNode<Integer> secondPop = stack.pop();
+		Assert.assertEquals(secondNode, secondPop);
+		MyNode<Integer> thirdPop = stack.pop();
+		Assert.assertEquals(firstNode, thirdPop);
+	}
+
 }
 //
